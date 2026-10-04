@@ -1,65 +1,46 @@
 public class dz {
 
-    static String dogname;
-    static String dogbreed;
-    static int dogage;
-
-    static String catname;
-    static String catcolor;
-    static int catage;
-
     public static void main(String[] args) {
         System.out.println("старт программы");
 
-        createdog("шарик", "овчарка", 3);
-        createcat("мурка", "трёхцветная", 2);
+        double a = 1.0;
+        double b = 2.0;
+        double c = 0.0001;
+        double d = 1.5;
+        int e = 100;
 
-        System.out.println();
-
-        dogspeak();
-        catspeak();
-
-        System.out.println();
-
-        printpetinfo();
+        solve(d, c, e);
 
         System.out.println("конец программы");
     }
 
-    public static void createdog(String name, String breed, int age) {
-        System.out.println("[система]: вызвана функция createdog(). создаем собаку");
-        dogname = name;
-        dogbreed = breed;
-        dogage = age;
-    }
-
-    public static void createcat(String name, String color, int age) {
-        System.out.println("[система]: вызвана функция createcat(). создаем кошку");
-        catname = name;
-        catcolor = color;
-        catage = age;
-    }
-
-    public static void dogspeak() {
-        System.out.println("[система]: вызвана функция dogspeak(). собака лает");
-        System.out.println(dogname + " говорит: гав-гав");
-    }
-
-    public static void catspeak() {
-        System.out.println("[система]: вызвана функция catspeak(). кошка мяукает");
-        System.out.println(catname + " говорит: мяу-мяу");
-    }
-
-    public static void printpetinfo() {
-        System.out.println("[система]: вызвана функция printpetinfo(). выводим данные в консоль:");
-        System.out.println("информация о собаке");
-        System.out.println("кличка: " + dogname);
-        System.out.println("порода: " + dogbreed);
-        System.out.println("возраст: " + dogage + " года/лет");
+    public static void solve(double f, double g, int h) {
+        System.out.println("[система]: вызвана функция solve(). начинаем расчет");
         
-        System.out.println("информация о кошке");
-        System.out.println("кличка: " + catname);
-        System.out.println("цвет: " + catcolor);
-        System.out.println("возраст: " + catage + " года/лет");
+        double i = f;
+        int j = 0;
+        double k = 0.0;
+        double m = 1.0; 
+
+        while (j < h) {
+            if (m > g) {
+                k = Math.cbrt(i + 2.0);
+                j = j + 1;
+
+                System.out.println("итерация " + j + " значение x равно " + k);
+
+                m = k - i;
+                if (m < 0) {
+                    m = -m;
+                }
+
+                i = k;
+            }
+        }
+
+        System.out.println("корень успешно найден");
+        System.out.println("приближенное значение корня равно " + i);
+        System.out.println("количество затраченных итераций равно " + j);
     }
 }
+
